@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Word Flagger</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Flag words well</h1>
+
+      <form id="analyze-form" enctype="multipart/form-data" method="post">
+        <div>
+          <label for="keywords">Flag Keywords:</label>
+          <input
+            type="text"
+            id="keywords"
+            name="keywords"
+            placeholder="Enter flag keywords"
+            required
+          />
+        </div>
+        <div>
+          <label for="file">Select File:</label>
+          <input type="file" id="file" name="file" required />
+        </div>
+        <div>
+          <button type="submit" id="analyze-btn">Analyze</button>
+        </div>
+      </form>
+
+      <div id="loader" class="loader" style="display: none"></div>
+
+      <div id="results" style="display: none">
+        <h2>Analysis Results</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Flagged Word</th>
+              <th>Count</th>
+              <th>Threat Level</th>
+            </tr>
+          </thead>
+          <tbody id="results-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
